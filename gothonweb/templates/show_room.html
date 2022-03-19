@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1> Player: {{player.player_name}}</h1>
+<h2> Game count: {{player.game_count}}</h2>
+<br>
+<h1> Room: {{player.current_game_room.name}}</h1>
+
+
+
+<pre>
+{{room.description}}
+</pre>
+
+{% if room.name in ["Game Over", "The End"] %}
+  <p><a href="/play_again?player_name={{player_name}}">Play Again?</a></p>
+  <p><a href="/login">Logout</a></p>
+{% else %}
+  <p>
+  <form action="/game?player_name={{player_name}}" method="POST">
+      -<input type="text" name="action"> <input type="SUBMIT">
+  </form>
+  </p>
+{% endif %}
+
+{% endblock %}
