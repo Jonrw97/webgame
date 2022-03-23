@@ -47,8 +47,8 @@ escape_pod.add_paths({
 })
 
 the_bridge.add_paths({
-    'throw the bomb': generic_death,
-    'slowly place the bomb': escape_pod
+    'throwbomb': generic_death,
+    'placebomb': escape_pod
 })
 
 laser_weapon_armory.add_paths({
@@ -57,8 +57,8 @@ laser_weapon_armory.add_paths({
 })
 
 central_corridor.add_paths({
-    'shoot': generic_death,
-    'dodge': generic_death,
+    'shootguard': generic_death,
+    'dodgebullet': generic_death,
     'telljoke': laser_weapon_armory
 })
 
