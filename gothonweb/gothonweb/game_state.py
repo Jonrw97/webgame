@@ -1,4 +1,6 @@
-from gothonweb import planisphere
+print("<<<<game_state")
+from gothonweb.games import gothons
+from gothonweb.planisphere import *
 class Player(object):
 
     def __init__(self, player_name):
@@ -13,9 +15,9 @@ class Player(object):
         self.current_game_room = room
 
     def reset_current_game(self):
-        self.current_game = "planisphere"
+        self.current_game = "gothons"
         self.game_count += 1
-        self.current_game_room = planisphere.get_start_room()
+        self.current_game_room = get_start_room(gothons.START, 'START')
 
 players = {
 
