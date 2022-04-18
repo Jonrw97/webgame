@@ -1,4 +1,3 @@
-print("<<<<gothons")
 from gothonweb import planisphere
 from random import randint
 from gothonweb.user_interface import gothons_ui

@@ -15,6 +15,7 @@ def login():
         return render_template("login.html")
     elif request.method =="POST":
         player_name = request.form.get('player_name')
+        print(repr(player_name),"<><><><><><")
         player = game_state.get_or_create_player(player_name)
         return redirect(url_for("game", player_name = player_name))
     else:
@@ -40,9 +41,7 @@ def game():
             raise Exception("No room found")
     else:
         action = request.form.get('action')
-        print(action,">>>>>>action")
         parsed_action = parse.parse_sentence(action)
-        print(parsed_action,">>>>>>parsed_action")
 
         if room and parsed_action:
             next_room = room.go(parsed_action)

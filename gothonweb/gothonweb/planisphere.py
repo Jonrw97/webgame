@@ -1,4 +1,3 @@
-print("<<<<planisphere")
 class Room(object):
 
     def __init__(self, name, description):
@@ -12,6 +11,6 @@ class Room(object):
     def add_paths(self, paths):
         self.paths.update(paths)
 
-def get_start_room(START, room_start):
-    return START.go(room_start)
+def get_start_room(self):
+    return self.go('START')
 
